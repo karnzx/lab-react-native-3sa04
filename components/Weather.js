@@ -5,8 +5,14 @@ import Forecast from './Forecast'
 export default function Weather(props) {
     const [forecastInfo, setForecastInfo] = useState({
         main: '-',
+        humidity: 0,
+        pressure: 0,
+        lat: 0,
+        lon: 0,
         description: '-',
-        temp: 0
+        temp: 0,
+        windSpeed: 0,
+        dataAt: '-'
     })
     useEffect(() => {
         console.log(`fetching data with zipCode = ${props.zipCode}`)
@@ -16,8 +22,14 @@ export default function Weather(props) {
                 .then((json) => {
                     setForecastInfo({
                         main: json.weather[0].main,
+                        humidity: json.main.humidity,
+                        pressure: json.main.pressure,
+                        lat: json.coord.lat,
+                        lon: json.coord.lon,
                         description: json.weather[0].description,
-                        temp: json.main.temp
+                        temp: json.main.temp,
+                        dataAt: json.name,
+                        windSpeed: json.wind.speed
                     });
                 })
                 .catch((error) => {
@@ -28,9 +40,8 @@ export default function Weather(props) {
     return (
         <ImageBackground source={require('../bg.jpg')} style={styles.backdrop}>
             <View style={styles.card}>
-                <Text>{props.place}</Text>
-                <Text> Zip Code : </Text>
-                <Text>{props.zipCode}</Text>
+                <Text style={styles.boldText}> Zip Code : </Text>
+                <Text style={styles.Text}>{props.zipCode}</Text>
             </View>
             <View style={styles.bigcard}>
                 <Forecast {...forecastInfo} />
@@ -40,6 +51,8 @@ export default function Weather(props) {
 }
 
 const styles = StyleSheet.create({
+    boldText: { fontSize: 18, fontWeight: 'bold' },
+    Text: { fontSize: 18 },
     card: {
         flexDirection: 'row',
         padding: 20,
@@ -53,8 +66,8 @@ const styles = StyleSheet.create({
     bigcard: {
         padding: 50,
         marginBottom: 20,
-        paddingLeft: 80,
-        paddingRight: 80,
+        paddingLeft: 40,
+        paddingRight: 40,
         backgroundColor: 'white',
         elevation: 20,
         borderRadius: 20,
