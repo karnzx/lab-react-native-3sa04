@@ -9,9 +9,9 @@ export default function Forecast(props) {
             <TextDetail title="Lattitude" text={props.lat} />
             <TextDetail title="Longitude" text={props.lon} />
             <TextDetail title="Temp" text={props.temp} suffix='°C' />
-            <TextDetail title="Humidity" text={props.humidity} />
-            <TextDetail title="Pressure" text={props.pressure} />
-            <TextDetail title="WindSpeed" text={props.windSpeed} />
+            <TextDetail title="Humidity" text={props.humidity} suffix='%' />
+            <TextDetail title="Pressure" text={props.pressure} suffix='hPa' />
+            <TextDetail title="WindSpeed" text={props.windSpeed} uffix='meter/sec' />
             <TextDetail title="dataAt" text={props.dataAt} />
         </View >
     );
