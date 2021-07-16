@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { ImageBackground, StyleSheet, View, Text } from 'react-native'
+import { ImageBackground, StyleSheet, View, Text, Button, Image } from 'react-native'
 import Forecast from './Forecast'
 
 export default function Weather(props) {
@@ -39,6 +39,9 @@ export default function Weather(props) {
     }, [props.zipCode])
     return (
         <ImageBackground source={require('../bg.jpg')} style={styles.backdrop}>
+            <Image
+                source={require('../bg.png')}
+                style={{ width: 130, height: 130, margin: 20 }} />
             <View style={styles.card}>
                 <Text style={styles.boldText}> Zip Code : </Text>
                 <Text style={styles.Text}>{props.zipCode}</Text>
@@ -46,6 +49,10 @@ export default function Weather(props) {
             <View style={styles.bigcard}>
                 <Forecast {...forecastInfo} />
             </View>
+            <Button
+                title="More Detial"
+                onPress={() => { }}
+            />
         </ImageBackground>
     );
 }
@@ -55,7 +62,7 @@ const styles = StyleSheet.create({
     Text: { fontSize: 18 },
     card: {
         flexDirection: 'row',
-        padding: 20,
+        padding: 15,
         marginBottom: 20,
         paddingLeft: 80,
         paddingRight: 80,
@@ -73,7 +80,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
     },
     backdrop: {
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         flexDirection: 'column',
         alignItems: 'center',
         width: '100%',
