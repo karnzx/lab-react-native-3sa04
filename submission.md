@@ -20,14 +20,14 @@
 6. เพิ่มหน่วยที่แสดงข้อมูลในหน้า Weather เช่น Humidity : ... %
 
 ---
-Finish Version
-![alt text](https://github.com/karnzx/lab-react-native-3sa04/blob/main/Home.JPG "Home page")
 
+Finish Version
+
+![alt text](https://github.com/karnzx/lab-react-native-3sa04/blob/main/Home.JPG "Home page")
 ![alt text](https://github.com/karnzx/lab-react-native-3sa04/blob/main/Weather3.JPG "Weather page V3")
 
 Previous Version of Weather page
-1
-![alt text](https://github.com/karnzx/lab-react-native-3sa04/blob/main/Weather1.JPG "Weather page V1")
 
-2
+![alt text](https://github.com/karnzx/lab-react-native-3sa04/blob/main/Weather.JPG "Weather page V1")
+---->
 ![alt text](https://github.com/karnzx/lab-react-native-3sa04/blob/main/Weather2.JPG "Weather page V2")
