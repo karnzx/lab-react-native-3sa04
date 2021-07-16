@@ -12,6 +12,7 @@ export default function Forecast(props) {
             <TextDetail title="Humidity" text={props.humidity} />
             <TextDetail title="Pressure" text={props.pressure} />
             <TextDetail title="WindSpeed" text={props.windSpeed} />
+            <TextDetail title="dataAt" text={props.dataAt} />
         </View >
     );
 }
