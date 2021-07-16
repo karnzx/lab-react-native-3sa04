@@ -26,20 +26,44 @@ export default function Weather(props) {
         }
     }, [props.zipCode])
     return (
-        <View>
-            <ImageBackground source={require('../bg.jpg')} style={styles.backdrop}>
-                <Text>Zip Code</Text>
+        <ImageBackground source={require('../bg.jpg')} style={styles.backdrop}>
+            <View style={styles.card}>
+                <Text>{props.place}</Text>
+                <Text> Zip Code : </Text>
                 <Text>{props.zipCode}</Text>
+            </View>
+            <View style={styles.bigcard}>
                 <Forecast {...forecastInfo} />
-            </ImageBackground>
-        </View>
+            </View>
+        </ImageBackground>
     );
 }
 
 const styles = StyleSheet.create({
+    card: {
+        flexDirection: 'row',
+        padding: 20,
+        marginBottom: 20,
+        paddingLeft: 80,
+        paddingRight: 80,
+        backgroundColor: 'white',
+        elevation: 20,
+        borderRadius: 20,
+    },
+    bigcard: {
+        padding: 50,
+        marginBottom: 20,
+        paddingLeft: 80,
+        paddingRight: 80,
+        backgroundColor: 'white',
+        elevation: 20,
+        borderRadius: 20,
+    },
     backdrop: {
+        justifyContent: 'center',
+        flexDirection: 'column',
         alignItems: 'center',
         width: '100%',
         height: '100%'
-    }
+    },
 });
